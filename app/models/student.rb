@@ -7,6 +7,7 @@ class Student < ActiveRecord::Base
     validates :phone, format: { with: /.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*/ }
 
     has_many :assignments
+    has_many :students, through: :assignments
 
     def name
         self.first_name + " " + self.last_name
