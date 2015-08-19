@@ -6,6 +6,8 @@ class Student < ActiveRecord::Base
     validates :email, uniqueness: true
     validates :phone, format: { with: /.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*/ }
 
+    has_one :teacher
+
     def name
         self.first_name + " " + self.last_name
     end
