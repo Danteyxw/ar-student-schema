@@ -9,9 +9,9 @@ class Student < ActiveRecord::Base
     has_many :assignments, :foreign_key => :student_id
     has_many :students, :through => :assignments
 
-    def name
-        self.first_name + " " + self.last_name
-    end
+    # def name
+    #     self.first_name + " " + self.last_name
+    # end
 
     def age
         current_date = Date.today
