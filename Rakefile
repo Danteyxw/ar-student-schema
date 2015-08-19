@@ -3,7 +3,7 @@ require 'rspec/core/rake_task'
 require_relative 'db/config'
 require_relative 'lib/students_importer'
 require_relative 'lib/teachers_generator'
-
+require_relative 'lib/assigner'
 
 desc "create the database"
 task "db:create" do
@@ -28,6 +28,7 @@ desc "populate the test database with sample data"
 task "db:populate" do
   StudentsImporter.import
   TeachersGenerator.generate
+  Assigner.assign
 end
 
 desc 'Retrieves the current schema version number'
