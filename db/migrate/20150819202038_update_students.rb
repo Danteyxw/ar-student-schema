@@ -1,7 +1,5 @@
 require_relative '../config'
 
 class UpdateStudents < ActiveRecord::Migration
-    def change
-        add_column :students, :teacher_id, :integer
-    end
+    remove_column :teacher_id
 end
