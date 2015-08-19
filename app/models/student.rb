@@ -9,13 +9,6 @@ class Student < ActiveRecord::Base
         current_date = Date.today
         birthday = self.birthday
 
-        age = current_date.year - birthday.year
-
-        if (current_date.month < birthday.month)
-            age -= 1
-        elsif (current_date.month == birthday.month &&
-               current_date.day < birthday.date)
-        end
-        age
+        age = current_date.year - birthday.year - ((current_date.month > birthday.month || (current_date.month == birthday.month && current_date.day < birthday.day)) ? 0:1)
     end
 end
