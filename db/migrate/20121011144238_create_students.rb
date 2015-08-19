@@ -9,7 +9,7 @@ class CreateStudents < ActiveRecord::Migration
         t.string :last_name
         t.string :gender
         t.date :birthday
-        t.string :email
+        t.string :email, unique: true
         t.string :phone
     end
   end
