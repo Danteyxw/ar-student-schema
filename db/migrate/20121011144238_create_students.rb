@@ -11,6 +11,7 @@ class CreateStudents < ActiveRecord::Migration
         t.date :birthday
         t.string :email, unique: true
         t.string :phone
+        t.timestamp, null: false
     end
   end
 end
