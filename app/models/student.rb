@@ -6,7 +6,7 @@ class Student < ActiveRecord::Base
     validates :email, uniqueness: true
     validates :phone, format: { with: /.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*\d.*/ }
 
-    has_many :assignments
+    has_many :assignments, foreign_key: :student_id
     has_many :students, through: :assignments
 
     def name
